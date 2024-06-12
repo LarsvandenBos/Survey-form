@@ -1,0 +1,170 @@
+** start of undefined **
+
+<!Doctype HTML>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+    <h1 id="title">free CodeCamp Survey Form</h1>
+    <p style="font-style: oblique;">Thank you for taking the time to help us improve the platform</p>
+    <p id="description" style="font-style: oblique;">In this survey you will help providing us with information about how you found freeCodeCamp, and why you decided you utilize our features.</p>
+    </header>
+    <form id="survey-form">
+      <div class="form-group">
+        <label id="name-label" for="name">Name:</label>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label id="email-label" for="email">Email:</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your E-mail address" required>
+      </div>
+      <div class="form-group">
+        <label id="number-label" for="number">Age (optional):</label>
+        <span class="clue"></span>
+        <input type="number" name="age" id="number" class="form-control" placeholder="age" min="0" max="120">
+      </div>
+      <div class="form-group">
+        <p>Which option best describes your current role?</p>
+        <select id="dropdown" name="role" class="form-group" required>
+          <option disabled selected value>Select current role</option>
+          <option value="student">Student</option>
+          <option value="job">Full Time Job</option>
+          <option value="learner">Full Time Learner</option>
+          <option value="preferNo">Prefer not to say</option>
+          <option value="other">Other</option>
+          </select>
+      </div>
+      <div class="form-group"> 
+        <p>Would you recommend freeCodeCamp to a friend?</p>
+        <label><input name="user-recommend" value="definitely" type="radio" class="input-radio" checked>Definitely</label>
+        <label><input name="user-recommend" value="maybe" type="radio" class="input-radio">Maybe</label>
+        <label><input name="user-recommend" value="probably not" type="radio" class="input-radio">Probably not</label>
+      </div>
+      <div class="form-group">
+        <p>What is your favorite feature of freeCodeCamp?</p>
+        <select id="most-like" name="mostlike" class="form-group" required>
+          <option disabled selected value>Select an option</option>
+          <option value="Challenges">Challenges</option>
+          <option value="Projects">Projects</option>
+          <option value="Community">Community</option>
+          <option value="openSource">Open Source</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <p>What would you like see approved?</p>
+        <span class="clue">(check all boxes that apply)</span>
+        <label><input name="prefer" value="front-end-projects" type="checkbox" class="input-checkbox">Front-end Projects</label>
+        <label><input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox">Back-end Projects</label>
+        <label><input name="prefer" value="data-visualization" type="checkbox" class="input-checkbox">Data Visualization</label>
+        <label><input name="prefer" value="challenges" type="checkbox" class="input-checkbox">Challenges</label>
+        <label><input name="prefer" value="open-source-community" type="checkbox" class="input-checkbox">Open Source Community</label>
+        <label><input name="prefer" value="gitter-help-rooms" type="checkbox" class="input-checkbox">Gitter help rooms</label>
+        <label><input name="prefer" value="videos" type="checkbox" class="input-checkbox">Videos</label>
+        <label><input name="prefer" value="city-meetups" type="checkbox" class="input-checkbox">City Meetups</label>
+        <label><input name="prefer" value="wiki" type="checkbox" class="input-checkbox">Wiki</label>
+        <label><input name="prefer" value="forum" type="checkbox" class="input-checkbox">Forum</label>
+        <label><input name="prefer" value="additional-courses" type="checkbox" class="input-checkbox">Additional Courses</label>
+      </div>
+      <div class="form-group">
+        <p>Any comments or suggestions?</p>
+        <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" id="submit" class="submit-button">Submit</button>
+      </div>
+      </form>
+    </div>
+</body>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+body {
+    text-align: center;
+}
+
+header {
+    max-width: 540px;
+    border: 3px solid rgba(77, 5, 232, 1);
+    border-radius: 10px;
+
+}
+
+form {
+    max-width: 500px;
+    text-align: left;
+    padding: 20px;
+    border: 3px solid rgba(77, 5, 232, 1);
+    border-radius: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+input {
+    padding: 3px;
+    border: none;
+    border-radius: 5px;
+}
+
+select {
+    padding: 3px;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: var(--color-darkblue);
+    background-image: linear-gradient(115deg, rgba(30, 139, 195, 0.8), rgba(136, 136, 206, 0.7)), url(https://cdn.discordapp.com/attachments/570149324827131916/1196510457297641623/IMG_20231216_181904_648.jpg?ex=6626a233&is=66142d33&hm=6fa75f6d7390a3b6819fcab9b0621c1936c79de8159cbd7be32e5a21c72efa50&);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(25, 181,    254, 1);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 0.5px solid rgba(58, 83, 155, 0.5);
+}
+
+.input-textarea {
+    min-height: 120px;
+    width: 100%;
+    padding: 0.625rem;
+    resize: vertical;
+    background: rgba(174, 168, 211, 1);
+    border: 0.5px solid rgba(58, 83, 155, 0.5);
+    border-radius: 10px;
+    color: white;
+}
+
+
+** end of undefined **
+
